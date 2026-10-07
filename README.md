@@ -27,7 +27,6 @@
 
 ## Overview
 
-**HIF-1α** (Hypoxia-Inducible Factor 1-alpha) is a master regulator of tumor adaptation to low-oxygen environments. Its interaction with the transcriptional co-activator **p300** activates a cascade of oncogenic genes driving angiogenesis, metabolic reprogramming, and therapeutic resistance in breast cancer. This protein–protein interface (PDB: **1P4Q**) has long been considered "undruggable" by conventional small molecules.
 
 This project presents a **Deep Convolutional Generative Adversarial Network (DCGAN)** framework that *creates entirely new peptide sequences* — Cell-Penetrating Anticancer Peptides (CPP-ACPs) — designed to disrupt this interface. Unlike virtual screening, the model generates novel sequences from scratch, followed by a rigorous multi-stage computational validation pipeline culminating in **six highly promising lead candidates**.
 
@@ -47,7 +46,7 @@ This project presents a **Deep Convolutional Generative Adversarial Network (DCG
            Nuclear Translocation
                     │
                     ▼
-       HIF-1α + p300 Complex Formation          ← Our CPP-ACPs disrupt here
+       CITED + p300 Complex Formation          ← Our CPP-ACPs disrupt here
                     │
                     ▼
    VEGF · GLUT1 · EPO · MDR1 · CA9 · LDHA
@@ -90,7 +89,7 @@ This project presents a **Deep Convolutional Generative Adversarial Network (DCG
                        ▼
           ┌────────────────────────┐
           │  ADCP CrankPep Docking │
-          │  (HIF-1/p300, 1P4Q)   │
+          │  (CITED + p300, 1P4Q)   │
           └────────────┬───────────┘
                        │
                        ▼
@@ -122,29 +121,7 @@ This project presents a **Deep Convolutional Generative Adversarial Network (DCG
 ---
 
 ## Deep Learning Architecture
-
-### Generator
-
-Transforms Gaussian latent noise into novel peptide sequences by learning the distribution of experimentally validated ACPs.
-
-| Layer | Operation |
-|---|---|
-| 1 | Dense (latent → hidden) |
-| 2 | Transposed Conv1D + Batch Norm + ReLU |
-| 3 | Transposed Conv1D + Batch Norm + ReLU |
-| 4 | Transposed Conv1D + Batch Norm + ReLU |
-| 5 | Output Conv1D (one-hot channels) |
-
-### Discriminator
-
-Distinguishes real validated peptides from generated sequences.
-
-| Layer | Operation |
-|---|---|
-| 1 | Conv1D + Batch Norm + LeakyReLU |
-| 2 | Conv1D + Batch Norm + LeakyReLU |
-| 3 | Flatten → Fully Connected |
-| 4 | Sigmoid output |
+- Available in Manusscript
 
 ### Training Strategy
 
@@ -210,7 +187,7 @@ Lead peptides demonstrated **stronger interaction profiles** than reference pept
 
 ## Molecular Dynamics Simulation
 
-Best-ranked complexes were subjected to **100 ns all-atom MD simulations** using NAMD with the CHARMM36 force field in explicit solvent.
+Best-ranked complexes were subjected to **100 ns all-atom MD simulations** using NAMD with the Amber force field in explicit solvent.
 
 **Trajectory analyses:**
 
@@ -261,22 +238,6 @@ Half-life was predicted across three biologically relevant compartments:
 | Half-life | ✅ Extended via cholesterol conjugation |
 | Final lead candidates | **6 optimized CPP-ACPs** |
 
----
-
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/Sadik90/HIGGAN.git
-cd HIGGAN
-
-# Create and activate environment
-conda create -n higgan python=3.9
-conda activate higgan
-
-# Install dependencies
-pip install -r requirements.txt
-```
 
 ### Requirements
 
@@ -293,27 +254,17 @@ mdanalysis
 
 ---
 
-## Resources
+## Resources > Database > Reference Complex > Docking > Molecular Dynamic Simulation > Peptide Optimization Protocols
 
 | Tool | Purpose |
 |---|---|
 | [APD3](https://aps.unmc.edu/AP/) | Antimicrobial/anticancer peptide database |
 | [CancerPPD](http://crdd.osdd.net/raghava/cancerppd/) | Anticancer peptide source |
-| [RCSB PDB 1P4Q](https://www.rcsb.org/structure/1P4Q) | HIF-1α/p300 complex structure |
+| [RCSB PDB 1P4Q](https://www.rcsb.org/structure/1P4Q) | CITED/p300 complex structure |
 | [ADCP CrankPep](https://ccsb.scripps.edu/adcp/) | Flexible peptide docking |
 | [HADDOCK](https://wenmr.science.uu.nl/haddock2.4/) | Protein–peptide docking |
 | [NAMD](https://www.ks.uiuc.edu/Research/namd/) | Molecular dynamics simulation |
 | [PepADMET](https://biosig.lab.uq.edu.au/pepADMET/) | Peptide pharmacokinetics |
-
----
-
-## Future Work
-
-- [ ] Experimental peptide synthesis and purification
-- [ ] In vitro validation in TNBC cell lines (MDA-MB-231, BT-549)
-- [ ] In vivo pharmacokinetic and efficacy evaluation
-- [ ] Multi-objective reinforcement learning for peptide optimization
-- [ ] Clinical translation pipeline for peptide therapeutics
 
 ---
 
@@ -323,9 +274,9 @@ If you use this work, please cite:
 
 ```bibtex
 @article{bhattarai2025hifgan,
-  title   = {Computational Discovery of Half-Life-Optimized Cell-Penetrating Anticancer Peptides Using
-Deep Generative Modeling},
-  author  = {Bhattarai, Sadik and Chong, Kil To and Tayara, Hilal},
+  title   = {De Novo Design of Pharmacokinetically Optimized Cell Penetrating Anticancer Peptides Targeting
+the CITED2–p300 Regulatory Interface in Hypoxia-Associated Cancer},
+  author  = {Bhattarai, Maryam Sadik and Chong, Kil To and Tayara, Hilal},
   journal = {Submitted},
   year    = {2026}
 }
