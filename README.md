@@ -5,7 +5,7 @@
 # De Novo Design of Pharmacokinetically Optimized Cell Penetrating Anticancer Peptides Targeting the CITED2–p300 Regulatory Interface in Hypoxia-Associated Cancer
 <br>Cell-Penetrating Anticancer Peptides  Design
 
-**A DCGAN-based framework for de novo CPP-ACP design targeting the HIF-1/p300 interface in breast cancer**
+**A DCGAN-based framework for de novo CPP-ACP design targeting the CITED/p300 interface in Hypoxia Targeting**
 
 [![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-DeepLearning-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
