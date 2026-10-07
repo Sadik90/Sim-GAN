@@ -2,7 +2,8 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=534AB7&center=true&vCenter=true&width=700&lines=Deep+Generative+AI+%C3%97+Structural+Bioinformatics+%C3%97+Molecular+Simulation;DCGAN+%E2%86%92+Docking+%E2%86%92+100+ns+MD+%E2%86%92+Half-life+Optimization;6+Lead+CPP-ACP+Candidates+%7C+Zero+Predicted+Toxicity" alt="Typing SVG" />
 
-# Computational Discovery of Half-Life-Optimized<br>Cell-Penetrating Anticancer Peptides
+# De Novo Design of Pharmacokinetically Optimized Cell Penetrating Anticancer Peptides Targeting
+the CITED2–p300 Regulatory Interface in Hypoxia-Associated Cancer<br>Cell-Penetrating Anticancer Peptides and Anti-Cancer Peptide Design
 
 **A DCGAN-based framework for de novo CPP-ACP design targeting the HIF-1/p300 interface in breast cancer**
 
